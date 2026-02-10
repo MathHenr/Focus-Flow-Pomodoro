@@ -1,5 +1,5 @@
 /* Dark theme is the default theme */
-:root[data-theme='dark'] {
+:root {
   /* Focus dark theme */
   --yellow-050: #fffef5;
   --yellow-100: #fef9c3;
