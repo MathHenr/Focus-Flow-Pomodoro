@@ -1,0 +1,21 @@
+.timer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-default);
+  padding: 0 2rem;
+}
+
+.timer span:first-of-type {
+  margin-top: -0.15em;
+}
+
+.timer span {
+  margin-top: -0.3em;
+  font-size: clamp(19.6rem, 25vw, 25.6rem);
+}
+
+.paused {
+  font-weight: bold;
+}
