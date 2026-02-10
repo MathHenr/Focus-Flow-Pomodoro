@@ -4,11 +4,12 @@ import './styles/theme.css';
 
 // component import
 import { Container } from './components/Container';
+import { Logo } from './components/Logo';
 
 export function App() {
   return (
     <Container>
-      <h1>Hello World!</h1>
+      <Logo />
     </Container>
   );
 }
