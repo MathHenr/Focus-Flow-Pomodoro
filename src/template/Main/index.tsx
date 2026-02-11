@@ -27,11 +27,11 @@ export function Main() {
     if (state.tasks.length < 1) {
       return createCycle({ state, setState });
     }
-    return changeIsActive({ state, setState });
+    return changeIsActive({ setState });
   };
 
   const pauseTimer = (): void => {
-    return changeIsActive({ state, setState });
+    return changeIsActive({ setState });
   };
 
   return (

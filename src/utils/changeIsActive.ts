@@ -1,13 +1,11 @@
 // import type
 import type { TimerContextProps } from '../contexts/TimerContext';
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export function changeIsActive({ state, setState }: TimerContextProps) {
+export function changeIsActive({ setState }: Pick<TimerContextProps, 'setState'>) {
   return setState((prevState) => {
-    const currentBollean = prevState.isActive;
     return {
       ...prevState,
-      isActive: !currentBollean ? true : false,
+      isActive: !prevState.isActive,
     };
   });
 }
