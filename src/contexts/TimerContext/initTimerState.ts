@@ -6,6 +6,7 @@ export const initTimerState: TimerStateModel = {
   secondsRemaining: 0,
   formattedSecondsRemaining: '00:00',
   cycle: 0,
+  isActive: false,
   config: {
     work: 25,
     shortBreak: 5,

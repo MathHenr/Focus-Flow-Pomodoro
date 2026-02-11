@@ -23,6 +23,7 @@ export function createCycle({ state, setState }: TimerContextProps) {
       ...prevState,
       secondsRemaining,
       cycle,
+      isActive: true,
       tasks: [newCycle],
     };
   });
