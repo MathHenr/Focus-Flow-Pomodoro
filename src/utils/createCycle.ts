@@ -5,8 +5,9 @@ import type { TimerContextProps } from '../contexts/TimerContext';
 // import function
 import { getCycle } from './getCycle';
 import { getCycleType } from './getCycleType';
+import { TimerActionType } from '../models/TimerActionModel';
 
-export function createCycle({ state, setState }: TimerContextProps) {
+export function createCycle({ state, dispatch }: TimerContextProps) {
   const cycle = getCycle(state.cycle);
   const type = getCycleType(cycle);
 
@@ -16,15 +17,7 @@ export function createCycle({ state, setState }: TimerContextProps) {
     type,
   };
 
-  const secondsRemaining = newCycle.duration * 60;
+  dispatch({ type: TimerActionType.START_TIME, payload: newCycle });
 
-  setState((prevState) => {
-    return {
-      ...prevState,
-      secondsRemaining,
-      cycle,
-      isActive: true,
-      tasks: [newCycle],
-    };
-  });
+  return;
 }

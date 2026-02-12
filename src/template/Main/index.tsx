@@ -17,7 +17,7 @@ import { Button } from '../../components/Button';
 import { Footer } from '../../components/Footer';
 
 export function Main() {
-  const { state, setState } = useTimerContext();
+  const { state, dispatch } = useTimerContext();
 
   function handleClick() {
     return;
@@ -25,13 +25,13 @@ export function Main() {
 
   const startTimer = (): void => {
     if (state.tasks.length < 1) {
-      return createCycle({ state, setState });
+      return createCycle({ state, dispatch });
     }
-    return changeIsActive({ setState });
+    return changeIsActive({ dispatch });
   };
 
   const pauseTimer = (): void => {
-    return changeIsActive({ setState });
+    return changeIsActive({ dispatch });
   };
 
   return (

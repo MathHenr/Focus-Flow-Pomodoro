@@ -1,44 +1,32 @@
 // import react hook
-import { useEffect, useState } from 'react';
+import { useEffect, useReducer } from 'react';
 
 // import initial values
 import { initTimerState } from '../../contexts/TimerContext/initTimerState';
 
 // import component context
 import { TimerContext } from '../../contexts/TimerContext';
+import { timerReducer } from '../../reducer/timerReducer';
+import { TimerActionType } from '../../models/TimerActionModel';
 
 type TimerContextProviderProps = {
   children: React.ReactNode;
 };
 
 export function TimerContextProvider({ children }: TimerContextProviderProps) {
-  const [state, setState] = useState(initTimerState);
+  const [state, dispatch] = useReducer(timerReducer, initTimerState);
 
   useEffect(() => {
     console.log(state);
-
     // Count Down logic
     if (!state.isActive) return;
-
     const interval = window.setInterval(() => {
-      setState((prevState) => {
-        if (!prevState.isActive) return prevState;
-
-        const currentSeconds = Math.max(prevState.secondsRemaining - 1, 0);
-
-        return {
-          ...prevState,
-          secondsRemaining: currentSeconds,
-          isActive: currentSeconds === 0 ? false : prevState.isActive,
-        };
-      });
+      dispatch({ type: TimerActionType.UPDATE_TIME });
     }, 1000);
-
     return () => window.clearInterval(interval);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [state.isActive, setState]);
+  }, [state]);
 
   return (
-    <TimerContext.Provider value={{ state, setState }}>{children}</TimerContext.Provider>
+    <TimerContext.Provider value={{ state, dispatch }}>{children}</TimerContext.Provider>
   );
 }
