@@ -15,26 +15,24 @@ export function StatusDisplay() {
         <></>
       ) : (
         <div className={style.content}>
-          {state.tasks.map((_, index) => {
-            if (state.tasks[index].type === 'work') {
-              return (
-                <>
-                  <BrainIcon />
-                  <p>Focus</p>
-                </>
-              );
-            }
-            return (
-              <>
-                <CoffeeIcon />
-                {state.tasks[index].type === 'shortBreak' ? (
-                  <p>Short Break</p>
-                ) : (
-                  <p>Long Break</p>
-                )}
-              </>
-            );
-          })}
+          {state.tasks[0].type === 'work' && (
+            <>
+              <BrainIcon />
+              <p>Focus</p>
+            </>
+          )}
+          {state.tasks[0].type === 'shortBreak' && (
+            <>
+              <CoffeeIcon />
+              <p>Short Break</p>
+            </>
+          )}
+          {state.tasks[0].type === 'longBreak' && (
+            <>
+              <CoffeeIcon />
+              <p>Long Break</p>
+            </>
+          )}
         </div>
       )}
     </>
