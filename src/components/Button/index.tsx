@@ -16,16 +16,12 @@ export function Button({ icon: Icon, variant, handleClick }: ButtonProps) {
     secondary: 'secondary',
   };
 
-  const valueText = getComputedStyle(document.documentElement).getPropertyValue(
-    '--text-default'
-  );
-
   return (
     <button
       onClick={handleClick}
       className={`${style.button} ${style[buttonVariant[variant]]}`}
     >
-      <Icon fill={valueText} />
+      <Icon fill="currentColor" />
     </button>
   );
 }
