@@ -28,7 +28,7 @@ export function TimerContextProvider({ children }: TimerContextProviderProps) {
 
   useEffect(() => {
     dispatch({ type: TimerActionType.BG_THEME });
-  });
+  }, [state.cycle]);
 
   return (
     <TimerContext.Provider value={{ state, dispatch }}>{children}</TimerContext.Provider>

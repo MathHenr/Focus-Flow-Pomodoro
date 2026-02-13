@@ -2,7 +2,7 @@
 :root {
   /* Focus dark theme */
   --yellow-050: #fffef5;
-  --yellow-100: #fef9c3;
+  --yellow-100: #fffcd6;
   --yellow-200: #fef08a;
   --yellow-300: #fde047;
   --yellow-400: #facc15;
@@ -72,7 +72,9 @@
   --theme-strong: var(--yellow-600);
   /* Text color */
   --text-default: var(--yellow-100);
-  /* Component fill */
+
+  /* Default link themes */
+  --link-color: #e6e9f0;
 }
 /* Light work theme */
 :root[data-theme='light-work'] {
@@ -83,6 +85,9 @@
   --theme-strong: var(--yellow-600);
   /* Text color */
   --text-default: var(--yellow-950);
+
+  /* Default link themes */
+  --link-color: #05070c;
 }
 
 :root[data-theme='light'] {
