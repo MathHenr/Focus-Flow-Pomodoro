@@ -21,7 +21,7 @@ export function Button({ icon: Icon, variant, handleClick }: ButtonProps) {
       onClick={handleClick}
       className={`${style.button} ${style[buttonVariant[variant]]}`}
     >
-      <Icon fill="#e6e9f0" />
+      <Icon fill="currentColor" />
     </button>
   );
 }

@@ -17,6 +17,10 @@ export function TimerContextProvider({ children }: TimerContextProviderProps) {
   const [state, dispatch] = useReducer(timerReducer, initTimerState);
 
   useEffect(() => {
+    dispatch({ type: TimerActionType.BG_THEME });
+  }, [state.cycle]);
+
+  useEffect(() => {
     console.log(state);
     // Count Down logic
     if (!state.isActive) return;
