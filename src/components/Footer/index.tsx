@@ -6,8 +6,7 @@ export function Footer() {
     <footer className={style.footer}>
       Created with ❤️ by{' '}
       <a href="https://github.com/MathHenr" target="blank">
-        {' '}
-        Matheus{' '}
+        Matheus
       </a>
     </footer>
   );
