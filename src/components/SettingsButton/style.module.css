@@ -73,3 +73,23 @@
   text-align: center;
   color: var(--text-default);
 }
+
+.close {
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1.2rem;
+  right: 1rem;
+  color: var(--text-default);
+  background-color: var(--theme-soft);
+  border-radius: 100rem;
+  transition: all 0.1s ease-in-out;
+  cursor: pointer;
+  border: none;
+  &:hover {
+    filter: brightness(80%);
+  }
+}
