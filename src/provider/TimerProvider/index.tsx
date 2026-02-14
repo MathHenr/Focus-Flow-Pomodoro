@@ -21,6 +21,9 @@ export function TimerContextProvider({ children }: TimerContextProviderProps) {
   }, [state.cycle]);
 
   useEffect(() => {
+    if (state.secondsRemaining > 0 && state.cycle > 0) {
+      document.title = `${state.formattedSecondsRemaining} - Focus Flow`;
+    }
     // Count Down logic
     if (!state.isActive) return;
     const interval = window.setInterval(() => {
