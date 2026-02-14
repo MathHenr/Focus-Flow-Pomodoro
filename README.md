@@ -1,73 +1,41 @@
-# React + TypeScript + Vite
+# Focus Flow
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de foco com ciclos de trabalho e pausa, inspirada no método Pomodoro. O objetivo e ajudar voce a manter o ritmo, alternando periodos de concentração e descanso com um timer simples e visual.
 
-Currently, two official plugins are available:
+Disponível em: https://focus-flow-theta-nine.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Objetivo
 
-## React Compiler
+- Ajudar a manter o foco com ciclos guiados.
+- Dar clareza do ciclo atual (trabalho, pausa curta, pausa longa).
+- Reduzir fricção: poucos cliques, interface direta.
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+## Funcionalidades
 
-## Expanding the ESLint configuration
+- Timer com ciclos automáticos.
+- Indicação do status do ciclo atual.
+- Controles rápidos para iniciar e pausar.
+- Layout responsivo.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Tecnologias
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- React
+- TypeScript
+- Vite
+- CSS Modules
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Como rodar
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
+```bash
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## Screenshots
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x';
-import reactDom from 'eslint-plugin-react-dom';
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-]);
-```
+![Tela 1](screenshots/Captura%20de%20tela%20de%202026-02-14%2016-57-32.png)
+![Tela 2](screenshots/Captura%20de%20tela%20de%202026-02-14%2016-58-26.png)
+![Tela 3](screenshots/Captura%20de%20tela%20de%202026-02-14%2016-58-42.png)
+![Tela 4](screenshots/Captura%20de%20tela%20de%202026-02-14%2016-58-55.png)
+![Tela 5](screenshots/Captura%20de%20tela%20de%202026-02-14%2016-59-14.png)
+![Tela 6](screenshots/Captura%20de%20tela%20de%202026-02-14%2016-59-54.png)
