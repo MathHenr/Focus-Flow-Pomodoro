@@ -2,7 +2,7 @@
 import style from './style.module.css';
 
 // import radix component
-import { Popover } from 'radix-ui';
+import { Popover, Switch } from 'radix-ui';
 // import component
 import { Button } from '../Button';
 // import lucide icon
@@ -22,16 +22,37 @@ export function SettingsButton() {
               <label className={style.label} htmlFor="">
                 Dark mode
               </label>
+              <Switch.Root className={style['switch-root']} id="theme-switch">
+                <Switch.Thumb className={style['switch-thumb']} />
+              </Switch.Root>
             </fieldset>
             <fieldset className={style.fieldset}>
               <label className={style.label} htmlFor="">
-                Short break mode
+                Focus length
               </label>
+              <input className={style.input} type="number" name="work" id="work" />
             </fieldset>
             <fieldset className={style.fieldset}>
               <label className={style.label} htmlFor="">
-                Long break mode
+                Short break length
               </label>
+              <input
+                className={style.input}
+                type="number"
+                name="shortBreak"
+                id="shortBreak"
+              />
+            </fieldset>
+            <fieldset className={style.fieldset}>
+              <label className={style.label} htmlFor="">
+                Long break length
+              </label>
+              <input
+                className={style.input}
+                type="number"
+                name="longBreak"
+                id="longBreak"
+              />
             </fieldset>
           </div>
           <Popover.Arrow fill="var(--bg-default)" />
