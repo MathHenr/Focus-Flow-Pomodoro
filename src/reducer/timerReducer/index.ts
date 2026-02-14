@@ -2,6 +2,8 @@ import { TimerActionType, type TimerActionModel } from '../../models/TimerAction
 import type { TimerStateModel } from '../../models/TimerStateModel';
 import { getCycle } from '../../utils/getCycle';
 import { getCycleType } from '../../utils/getCycleType';
+import { getMinutes } from '../../utils/getMinutes';
+import { getSeconds } from '../../utils/getSeconds';
 
 export function timerReducer(
   state: TimerStateModel,
@@ -13,10 +15,13 @@ export function timerReducer(
     case TimerActionType.START_TIME: {
       const secondsRemaining = action.payload.duration * 60;
       const cycle = getCycle(state.cycle);
+      const minutes = getMinutes(secondsRemaining);
+      const seconds = getSeconds(secondsRemaining);
 
       return {
         ...state,
         secondsRemaining,
+        formattedSecondsRemaining: `${minutes}:${seconds}`,
         cycle,
         isActive: true,
         tasks: [action.payload],
@@ -44,10 +49,13 @@ export function timerReducer(
       if (!state.isActive) return state;
 
       const secondsRemaining = Math.max(state.secondsRemaining - 1, 0);
+      const minutes = getMinutes(secondsRemaining);
+      const seconds = getSeconds(secondsRemaining);
 
       return {
         ...state,
         secondsRemaining,
+        formattedSecondsRemaining: `${minutes}:${seconds}`,
         isActive: secondsRemaining === 0 ? false : state.isActive,
       };
     }
